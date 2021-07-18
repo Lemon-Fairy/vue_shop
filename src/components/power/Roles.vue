@@ -127,7 +127,7 @@
 
     <!-- 添加角色对话框 -->
     <el-dialog
-      title="提示"
+      title="添加角色"
       :visible.sync="addRoleDialogVisible"
       width="50%"
       @close="addRoleDialogClose"
@@ -306,7 +306,6 @@ export default {
       if (!node.children) {
         return arr.push(node.id)
       }
-
       node.children.forEach((item) => this.getLeafKeys(item, arr))
     },
     // 监听分配权限对话框的关闭事件
@@ -396,7 +395,7 @@ export default {
     async removeRoleById(id) {
       // 弹窗询问
       const confirmResult = await this.$confirm(
-        '此操作将永久删除该用户, 是否继续?',
+        '此操作将永久删除该角色, 是否继续?',
         '提示',
         {
           confirmButtonText: '确定',
